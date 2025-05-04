@@ -115,6 +115,7 @@ print(driver2.accept_ride())   # Sourav has accepted the ride!
 print(driver2.complete_ride()) # Sourav has completed the trip in a SUV.
 ```
 
+![image](https://github.com/user-attachments/assets/8cf9e360-e932-4445-ac46-1dd96acdf70a)
 
 
 
