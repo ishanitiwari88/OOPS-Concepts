@@ -118,6 +118,74 @@ print(driver2.complete_ride()) # Sourav has completed the trip in a SUV.
 ![image](https://github.com/user-attachments/assets/8cf9e360-e932-4445-ac46-1dd96acdf70a)
 
 
+# FEATURES OF OOP
+## Accessing and Modifying Private Data Members
+Using **_Getter and Setter_**: You can use the getter and setter methods to access and modify the _private field_.
+```
+class MyClass:
+  __myField = None
+  # Getter method
+  def getMyField(self):
+    return MyClass.__myField
+  # Setter method
+  def setMyField(self, value):
+    MyClass.__myField=value
+
+obj = MyClass()
+obj.setMyField(42)
+value = obj.getMyField()
+print(value)
+```
+> [!NOTE]
+>  "getter" and "setter" refer to a convention in object-oriented programming rather than fixed methods that are built into Python or other languages.  
+> a common practice but not a language requirement.
+
+For a more Pythonic approach, you could rewrite your code using the @property decorator:
+## @property Decorator
+This allows you to access the method as if it were an attribute:
+```
+class Person:
+    def __init__(self):
+        self._age = 0
+    
+    @property
+    def age(self):
+        return self._age
+person = Person()
+print(person.age)  # Calls the age() method, but written like an attribute
+```
+### @attribute.setter Decorator
+The setter decorator works together with the property to handle assignment:
+```
+class Person:
+    def __init__(self):
+        self._age = 0
+    
+    @property
+    def age(self):
+        return self._age
+    
+    @age.setter
+    def age(self, value):
+        if value < 0:
+            raise ValueError("Age cannot be negative")
+        self._age = value
+person = Person()
+person.age = 25  # Calls the setter method
+```
+These properties give best of both worlds- clean syntax of attributes with the control and flexibility of methods.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
