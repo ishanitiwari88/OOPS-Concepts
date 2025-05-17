@@ -219,11 +219,58 @@ person_address = Address("123 Main St", "Cityville", "12345")
 person = Person("John Doe", 30, person_address)
 person.display_info()
 ```
+### Polymorphism
+1. Compile-time Polymorphism (Static Binding or Method Overloading) -
+   - In Python, method overloading is achieved in a different way, as the language does not support multiple methods with the same name but different parameter lists.
+   ```
+   class MyClass:
+    def add(self, a, b):
+        return a + b
+    def add(self, a, b, c):
+        return a + b + c
+   # This will result in an ERROR in Python
 
+   #CORRECT WAY:
+   def add(a, b, c=None):
+    if(c):
+        return a+b+c 
+    else:
+        return a+b
+   ```
+2. Run-time Polymorphism (Dynamic Binding or Method Overriding):
+   - a subclass can provide a specific implementation for a method that is already defined in its superclass.
+   - Polymorphism enhances the flexibility and reusability of code
+   ```
+   class Animal:
+     def make_sound(self):
+       return "some sound"
+   class Dog(Animal):
+     def make_sound(self):
+       return "Woof"
+   dog = Dog()
+   print(dog.make_sound())   #output: Woof
+   ```
 
+### Function Overloading
+**Using Variable-Length Argument Lists:**  
+```
+class MyClass:
+    def add(self, *args):
+        return sum(args)
 
+# Creating an instance of MyClass
+my_object = MyClass()
 
+# Calling the add method with different numbers of arguments
+result1 = my_object.add(1)
+result2 = my_object.add(1, 2)
+result3 = my_object.add(1, 2, 3)
 
+print(result1)  # Output: 1
+print(result2)  # Output: 3
+print(result3)  # Output: 6
+```
+the add method accepts a variable-length argument list (*args). It can take any number of arguments, and the sum function is used to calculate the sum of all arguments.
 
 
 
