@@ -175,7 +175,7 @@ person.age = 25  # Calls the setter method
 ```
 These properties give best of both worlds- clean syntax of attributes with the control and flexibility of methods.
 
-## Inheritance
+## Inheritance, Packages, and Interfaces
 
 
 | Member Visibility| Public (default) | Protected (_single)              | Private (__double)  |
@@ -271,6 +271,87 @@ print(result2)  # Output: 3
 print(result3)  # Output: 6
 ```
 the add method accepts a variable-length argument list (*args). It can take any number of arguments, and the sum function is used to calculate the sum of all arguments.
+
+### Abstract Class  (@abstractmethod)
+
+Abstract classes may contain abstract methods, which are methods that are declared in the abstract class but don't have an implementation.
+```
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius ** 2
+```
+1. Abstract classes cannot be instantiated directly.
+2. Abstract methods are declared using the @abstractmethod decorator in the abstract class.
+3. Subclasses must provide concrete implementations for all abstract methods to be considered valid.
+4. Abstract classes can contain both abstract and non-abstract methods.
+
+### Nested Class
+### Static method
+.  
+.  
+.  
+
+
+
+
+## Exception handling
+- Try: The try block is used to enclose the code that might raise an exception
+- Except: The except block is used to catch and handle specific exceptions that might occur within the try block. You can have multiple except blocks to handle different types of exceptions.
+- Finally: The finally block contains code that will be executed regardless of whether an exception occurred or not. It is useful for cleanup operations.
+- Else: The else block is optional and is executed only if no exceptions are raised in the try block. It is useful for code that should run only when there are no exceptions.
+  ```
+  try:
+    result = 10 / 2
+  except ZeroDivisionError:
+    print("Error: Division by zero")
+  else:
+    print("No exceptions occurred")
+    ```
+- Raise: The raise statement is used to manually raise an exception. This can be useful when you want to indicate that a certain condition is an error.
+  ```
+  x = -1
+  if x < 0:
+      raise ValueError("Value must be non-negative")
+  ```
+Type of Exceptions in Python: Here are some common types of exceptions in Python:
+
+- SyntaxError: Raised for syntax errors during parsing.
+- IndentationError: Raised when there's an incorrect indentation.
+- NameError: Raised when an identifier is not found in the local or global namespace.
+- TypeError: Raised when an operation or function is applied to an object of an inappropriate type.
+- ValueError: Raised when a function receives an argument of the correct type but an inappropriate value.
+- ZeroDivisionError: Raised when division or modulo by zero is encountered.
+- FileNotFoundError: Raised when a file or directory is requested but cannot be found.
+- IndexError: Raised when a sequence subscript is out of range.
+- Custom Exception  
+   , etc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
