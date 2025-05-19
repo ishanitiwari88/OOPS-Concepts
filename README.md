@@ -337,15 +337,44 @@ Type of Exceptions in Python: Here are some common types of exceptions in Python
    , etc
 
 
+## Multithreading
+1. Creating a Thread:
+```
+import threading
 
+class MyThread(threading.Thread):
+    def run(self):
+        # Code to be executed in the thread
+        print("Thread is running!")
 
+# Create an instance of the custom thread class
+my_thread = MyThread()
+```
+2. Starting a Thread:
+Once you've created a thread instance, you can start it using the start() method. This method internally calls the run() method you defined.
+my_thread.start()
 
+3. Synchronization:
+When multiple threads access shared resources, it's essential to synchronize them to avoid data corruption or unexpected behavior. You can use locks from the threading module for synchronization:
 
+4. Thread State:
+You can check the state of a thread using the is_alive() method. It returns True if the thread is currently executing.
 
+5. Thread Join:
+This method waits for the thread to complete its execution.
+my_thread.join()
+print("Thread has finished.")
 
+> Additionally, you can use the Thread class's terminate() method to forcefully terminate a thread. However, it's generally not recommended to forcefully terminate threads due to potential resource leaks and data corruption.
 
+### Sleep method
+ used to pause the execution of the currently running thread for a specified amount of time.
+```
+import time
 
-
+# Pause the current thread for 2 seconds
+time.sleep(2)
+```
 
 
 
