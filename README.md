@@ -375,9 +375,11 @@ import time
 # Pause the current thread for 2 seconds
 time.sleep(2)
 ```
+### Yield Method  
+When a function contains a yield statement, it becomes a generator function, allowing it to generate values lazily, one at a time, rather than computing them all at once and storing them in memory.  
 
-
-
+### Interrupting threads
+1. Using a shared variable or flag: 
 
 
 
